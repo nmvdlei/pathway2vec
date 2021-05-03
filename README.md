@@ -49,6 +49,8 @@ Please download the following preprocessed files from [Zenodo](https://zenodo.or
     - "pathway2vec_embeddings.npz": a sample of embeddings (nodes, dimension size). Based on your tests, you need to
       learn embeddings walks during training step. You many use "hin.pkl" and "X_hin.txt" as test samples.
 
+-------------------------------------------------------------------------------------------------------------------------
+
 ## Installation and Basic Usage
 
 Run the following commands to clone the repository to an appropriate location:
@@ -57,6 +59,8 @@ Run the following commands to clone the repository to an appropriate location:
 
 For all experiments, navigate to ``src`` folder then run the commands of your choice. For example, to display *
 pathway2vec*'s running options use: `python main.py --help`. It should be self-contained.
+
+-------------------------------------------------------------------------------------------------------------------------
 
 ### Preprocessing graph
 
@@ -95,6 +99,8 @@ To preprocess **two layers graph**, execute the following command:
 ``python main.py --preprocess-dataset --exclude-third-graph --first-graph-name "ec_graph.pkl" --second-graph-name "pathway_graph.pkl" --first-mapping-file-name "ec2pathway.pkl" --hin-file "[Name of the hin file].pkl" --ospath "[path to all object files]" --logpath "[path to the log directory]" --num-jobs 2``
 
 where *--exclude-third-graph* enables the including two layers only.
+
+-------------------------------------------------------------------------------------------------------------------------
 
 ### Generate Walks
 
@@ -142,6 +148,8 @@ For RUST, it is better to use *--burn-in-phase = 3*. *--file-name* corresponds t
 EXTENSION*. The file will have *.txt* extension. The argument *--q* represents the probability to explore within layer
 nodes (breadth-search). The in-depth search will be automatically adjusted based on unit circle equation.
 
+-------------------------------------------------------------------------------------------------------------------------
+
 ### Train
 
 To learn embeddings using random walks, we provide few examples.
@@ -173,6 +181,8 @@ To learn embeddings using the same above parameter settings but with *metapath2v
 package, execute the following command:
 
 ``python main.py --train --fit-by-word2vec --constraint-type --embedding-dim 128 --num-skips 2 --window-size 3 --hin-file "[Name of the hin file].pkl" --file-name "[Name of the .txt file]" --model-name "[Model name without extension]" --mdpath "[path where embeddings would be stored]" --rspath "[path to storing the cost values]" --ospath "[path to all object files]" --logpath "[path to the log directory]" --num-epochs 3 --num-jobs 2``
+
+-------------------------------------------------------------------------------------------------------------------------
 
 ## Citing
 
